@@ -28,4 +28,8 @@ public class LogicaCliente {
 	public void actualizarCliente(Cliente c) {
 		clienteDAO.update(c);
 	}
+	
+	public void eliminarCliente(Cliente c) {
+		clienteDAO.delete(c);
+	}
 }

@@ -60,7 +60,7 @@ public class Controlador extends HttpServlet {
 		}
 		
 		if(request.getParameter("btn-abmCliente") != null) {
-			abmCliente(request, response);
+			listarClientes(request, response);
 			//response.sendRedirect("/JavaWebHotel/abmCliente.jsp");
 		}
 		
@@ -93,13 +93,12 @@ public class Controlador extends HttpServlet {
 			newCliente.setNumTarjetaCredito(nroTarjeta);
 			
 			ctrlLogicaCliente.registrarCliente(newCliente);
-			abmCliente(request, response);
+			listarClientes(request, response);
 		}
 		
 		if(request.getParameter("btn-actualizarCliente") != null) {
 			Cliente c = new Cliente();
 			int id = Integer.parseInt(request.getParameter("txtid"));
-			System.out.print(id);
 			String tipoDoc = request.getParameter("tipoDoc");
 			String nroDoc = request.getParameter("numDoc");
 			String nombre = request.getParameter("nombre");
@@ -128,7 +127,7 @@ public class Controlador extends HttpServlet {
 			c.setNumTarjetaCredito(nroTarjeta);
 			
 			ctrlLogicaCliente.actualizarCliente(c);
-			abmCliente(request, response);
+			listarClientes(request, response);
 		}
 		
 	}
@@ -144,7 +143,7 @@ public class Controlador extends HttpServlet {
 		return myDate;
 	}
 	
-	public void abmCliente(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void listarClientes(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		LinkedList<Cliente> clientes = ctrlLogicaCliente.getAll();
 		request.setAttribute("listaClientes", clientes);
 		request.getRequestDispatcher("abmCliente.jsp").forward(request, response);

@@ -12,7 +12,6 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 <title>Insert title here</title>
 <%
-	Cliente c = (Cliente)session.getAttribute("usuario");
 	LinkedList<Cliente> lc = (LinkedList<Cliente>)request.getAttribute("listaClientes");
 %>
 </head>
@@ -45,7 +44,7 @@
 								<td><%=cli.getFechaNacimiento() %></td>
 								<td>
 									<a href="editarCliente.jsp?id=<%=cli.getIdCliente() %>" class="btn btn-warning">Editar</a>
-									<a href="eliminarCliente.jsp" class="btn btn-danger">Eliminar</a>
+									<a href="eliminarCliente.jsp?id=<%=cli.getIdCliente() %>" class="btn btn-danger">Eliminar</a>
 								</td>
 							</tr>
 						<% } %>
