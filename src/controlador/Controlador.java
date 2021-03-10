@@ -96,6 +96,42 @@ public class Controlador extends HttpServlet {
 			abmCliente(request, response);
 		}
 		
+		if(request.getParameter("btn-actualizarCliente") != null) {
+			Cliente c = new Cliente();
+			int id = Integer.parseInt(request.getParameter("txtid"));
+			System.out.print(id);
+			/*
+			String tipoDoc = request.getParameter("tipoDoc");
+			String nroDoc = request.getParameter("numDoc");
+			String nombre = request.getParameter("nombre");
+			String apellido = request.getParameter("apellido");
+			String email = request.getParameter("email");
+			String password = request.getParameter("contraseña");
+			String telefono = request.getParameter("telefono");
+			String sexo = request.getParameter("sexo");
+			String fechaNacimiento = request.getParameter("fechaNacimiento");
+			Date myDate = convertDate(fechaNacimiento);
+			java.sql.Date sqlDate = new java.sql.Date(myDate.getTime());
+			String tipoTarjeta = request.getParameter("tipoTarjetaCredito");
+			String nroTarjeta = request.getParameter("numTarjetaCredito");
+			
+			c.setIdCliente(id);
+			c.setTipoDoc(tipoDoc);
+			c.setNumDoc(nroDoc);
+			c.setNombre(nombre);
+			c.setApellido(apellido);
+			c.setMail(email);
+			c.setContraseña(password);
+			c.setTelefono(telefono);
+			c.setSexo(sexo);
+			c.setFechaNacimiento(sqlDate);
+			c.setTipoTarjetaCredito(tipoTarjeta);
+			c.setNumTarjetaCredito(nroTarjeta);
+			
+			ctrlLogicaCliente.actualizarCliente(c);
+			abmCliente(request, response);*/
+		}
+		
 	}
 	
 	public Date convertDate(String date) {

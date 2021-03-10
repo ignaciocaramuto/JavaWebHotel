@@ -92,7 +92,7 @@ public class ClienteDAO {
 	}
 	
 	
-	public Cliente getByID(Cliente cli) {
+	public Cliente getByID(int id) {
 		Cliente c=null;
 		PreparedStatement stmt=null;
 		ResultSet rs=null;
@@ -100,7 +100,7 @@ public class ClienteDAO {
 			stmt=DbConnector.getInstancia().getConn().prepareStatement(
 					"select nombre,apellido,tipo_doc,nro_doc,email,telefono,sexo,password,fecha_Nacimiento,tipo_Tarjeta_Credito,nro_Tarjeta_Credito from cliente where id_Cliente=?"
 					);
-			stmt.setInt(1, cli.getIdCliente());
+			stmt.setInt(1, id);
 			rs=stmt.executeQuery();
 			if(rs!=null && rs.next()) {
 				c=new Cliente();
@@ -179,7 +179,7 @@ public class ClienteDAO {
 		ResultSet keyResultSet=null;
 		try {
 			stmt=DbConnector.getInstancia().getConn().prepareStatement(
-					"update cliente set tipo_doc=?, nro_doc=?, nombre=?, apellido=? email=? password=? telefono=? sexo=? fecha_Nacimiento=? tipo_Tarjeta_Credito=? nro_Tarjeta_Credito=? where id_Cliente=?"
+					"update cliente set tipo_doc=?, nro_doc=?, nombre=?, apellido=?, email=?, password=?, telefono=?, sexo=?, fecha_Nacimiento=?, tipo_Tarjeta_Credito=?, nro_Tarjeta_Credito=? where id_Cliente=?"
 					);
 			stmt.setString(1, c.getTipoDoc());
 			stmt.setString(2, c.getNumDoc());

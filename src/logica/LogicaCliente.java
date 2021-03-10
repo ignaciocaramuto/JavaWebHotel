@@ -20,4 +20,12 @@ public class LogicaCliente {
 	public void registrarCliente(Cliente c) {
 		clienteDAO.add(c);
 	}
+	
+	public Cliente getOne(int id) {
+		return clienteDAO.getByID(id);
+	}
+	
+	public void actualizarCliente(Cliente c) {
+		clienteDAO.update(c);
+	}
 }
