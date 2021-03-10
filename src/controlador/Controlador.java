@@ -100,7 +100,6 @@ public class Controlador extends HttpServlet {
 			Cliente c = new Cliente();
 			int id = Integer.parseInt(request.getParameter("txtid"));
 			System.out.print(id);
-			/*
 			String tipoDoc = request.getParameter("tipoDoc");
 			String nroDoc = request.getParameter("numDoc");
 			String nombre = request.getParameter("nombre");
@@ -129,7 +128,7 @@ public class Controlador extends HttpServlet {
 			c.setNumTarjetaCredito(nroTarjeta);
 			
 			ctrlLogicaCliente.actualizarCliente(c);
-			abmCliente(request, response);*/
+			abmCliente(request, response);
 		}
 		
 	}
