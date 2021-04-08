@@ -41,7 +41,6 @@ public class Controlador extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		
-		String accion = request.getParameter("accion");
 		
 		if(request.getParameter("btn-login") != null) {
 			Cliente c = new Cliente();

@@ -32,4 +32,5 @@ public class LogicaCliente {
 	public void eliminarCliente(int id) {
 		clienteDAO.delete(id);
 	}
+	
 }
