@@ -15,9 +15,9 @@
 <%
 	int id = Integer.parseInt((String)request.getParameter("id"));
 	LogicaCliente ctrlLogica = new LogicaCliente();
-	Cliente c = new Cliente();
-	c = ctrlLogica.getOne(id);
-	ctrlLogica.eliminarCliente(c);
+	//Cliente c = new Cliente();
+	//c = ctrlLogica.getOne(id);
+	ctrlLogica.eliminarCliente(id);
 %>
 </head>
 <body>

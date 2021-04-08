@@ -97,8 +97,7 @@ public class Controlador extends HttpServlet {
 		}
 		
 		if(request.getParameter("btn-actualizarCliente") != null) {
-			Cliente c = new Cliente();
-			int id = Integer.parseInt(request.getParameter("txtid"));
+			int id = Integer.parseInt((String)request.getParameter("txtid"));
 			String tipoDoc = request.getParameter("tipoDoc");
 			String nroDoc = request.getParameter("numDoc");
 			String nombre = request.getParameter("nombre");
@@ -113,20 +112,21 @@ public class Controlador extends HttpServlet {
 			String tipoTarjeta = request.getParameter("tipoTarjetaCredito");
 			String nroTarjeta = request.getParameter("numTarjetaCredito");
 			
-			c.setIdCliente(id);
-			c.setTipoDoc(tipoDoc);
-			c.setNumDoc(nroDoc);
-			c.setNombre(nombre);
-			c.setApellido(apellido);
-			c.setMail(email);
-			c.setContraseña(password);
-			c.setTelefono(telefono);
-			c.setSexo(sexo);
-			c.setFechaNacimiento(sqlDate);
-			c.setTipoTarjetaCredito(tipoTarjeta);
-			c.setNumTarjetaCredito(nroTarjeta);
+			Cliente cli = new Cliente();
+			cli.setIdCliente(id);
+			cli.setTipoDoc(tipoDoc);
+			cli.setNumDoc(nroDoc);
+			cli.setNombre(nombre);
+			cli.setApellido(apellido);
+			cli.setMail(email);
+			cli.setContraseña(password);
+			cli.setTelefono(telefono);
+			cli.setSexo(sexo);
+			cli.setFechaNacimiento(sqlDate);
+			cli.setTipoTarjetaCredito(tipoTarjeta);
+			cli.setNumTarjetaCredito(nroTarjeta);
 			
-			ctrlLogicaCliente.actualizarCliente(c);
+			ctrlLogicaCliente.actualizarCliente(cli);
 			listarClientes(request, response);
 		}
 		

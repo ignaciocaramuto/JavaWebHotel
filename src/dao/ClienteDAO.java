@@ -104,6 +104,7 @@ public class ClienteDAO {
 			rs=stmt.executeQuery();
 			if(rs!=null && rs.next()) {
 				c=new Cliente();
+				c.setIdCliente(id);
 				c.setNombre(rs.getString("nombre"));
 				c.setApellido(rs.getString("apellido"));
 				c.setTipoDoc(rs.getString("tipo_doc"));
@@ -196,7 +197,7 @@ public class ClienteDAO {
 			stmt.executeUpdate();
 		
 	}  catch (SQLException e) {
-		System.out.print("Clase DataCliente metodo update ");
+		System.out.print("Clase ClienteDAO metodo update ");
         e.printStackTrace();
 	} finally {
         try {
@@ -210,7 +211,7 @@ public class ClienteDAO {
 	}
 	
 	
-	public void delete(Cliente c) {
+	public void delete(int id) {
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 		
@@ -219,7 +220,7 @@ public class ClienteDAO {
 					"delete from cliente where id_Cliente=?"
 					);
 			
-			stmt.setInt(1, c.getIdCliente());
+			stmt.setInt(1, id);
 			stmt.executeUpdate();
 		
 		} catch (SQLException e) {
