@@ -20,15 +20,15 @@ import logica.Login;
 /**
  * Servlet implementation class LoginControlador
  */
-@WebServlet("/Controlador")
-public class Controlador extends HttpServlet {
+@WebServlet("/ControladorABMCliente")
+public class ControladorABMCliente extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private LogicaCliente ctrlLogicaCliente;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Controlador() {
+    public ControladorABMCliente() {
         super();
         ctrlLogicaCliente = new LogicaCliente();
         // TODO Auto-generated constructor stub

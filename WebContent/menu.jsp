@@ -13,7 +13,7 @@
 </head>
 <body>
 	<div class="container" style="margin-top: 80px">
-		<form method="post" action="Controlador">
+		<form method="post" action="ControladorABMCliente">
 			<div class="card" style="width: 30rem">
 				<div class="card-body">
 				<h2>Seleccione una opción</h2>

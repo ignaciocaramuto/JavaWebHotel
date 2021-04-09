@@ -15,13 +15,11 @@
 <%
 	int id = Integer.parseInt((String)request.getParameter("id"));
 	LogicaCliente ctrlLogica = new LogicaCliente();
-	//Cliente c = new Cliente();
-	//c = ctrlLogica.getOne(id);
 	ctrlLogica.eliminarCliente(id);
 %>
 </head>
 <body>
-	<form method="post" action="Controlador">
+	<form method="post" action="../ControladorABMCliente">
 		<h2>Cliente eliminado</h2>
 		<input type="submit" class="btn btn-primary btn-block mt-2" name="btn-abmCliente" value="Volver">
 	</form>

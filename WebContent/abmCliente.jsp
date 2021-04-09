@@ -18,7 +18,7 @@
 <body>
 <div class="container">
 		<div class="row">
-			<a href="registrarCliente.jsp">Registrar nuevo cliente</a>
+			<a href="ABM-Cliente/registrarCliente.jsp">Registrar nuevo cliente</a>
 			<h4>Clientes</h4>
 			<div class="col-12 col-sm col-lg-12">
 				<div class="table-responsive">
@@ -43,8 +43,8 @@
 								<td><%=cli.getSexo() %></td>
 								<td><%=cli.getFechaNacimiento() %></td>
 								<td>
-									<a href="editarCliente.jsp?id=<%=cli.getIdCliente() %>" class="btn btn-warning">Editar</a>
-									<a href="eliminarCliente.jsp?id=<%=cli.getIdCliente() %>" class="btn btn-danger">Eliminar</a>
+									<a href="ABM-Cliente/editarCliente.jsp?id=<%=cli.getIdCliente() %>" class="btn btn-warning">Editar</a>
+									<a href="ABM-Cliente/eliminarCliente.jsp?id=<%=cli.getIdCliente() %>" class="btn btn-danger">Eliminar</a>
 								</td>
 							</tr>
 						<% } %>
