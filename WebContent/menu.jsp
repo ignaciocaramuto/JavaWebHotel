@@ -16,8 +16,11 @@
 		<form method="post" action="ControladorABMCliente">
 			<div class="card" style="width: 30rem">
 				<div class="card-body">
-				<h2>Seleccione una opción</h2>
+					<h2>Seleccione una opción</h2>
 					<input type="submit" class="btn btn-primary btn-block mt-2" name="btn-abmCliente" value="ABM Clientes">
+					<input type="submit" formaction="ControladorABMTipo_Habitacion" class="btn btn-primary btn-block mt-2" name="btn-abmTipo_Habitacion" value="ABM Tipo de habitacion">
+					<input type="submit" formaction="ControladorABMHabitacion" class="btn btn-primary btn-block mt-2" name="btn-abmHabitacion" value="ABM Habitacion">
+					<input type="submit" formaction="ControladorABMServicio" class="btn btn-primary btn-block mt-2" name="btn-abmServicio" value="ABM Servicio">
 				</div>
 			</div>
 		</form>
