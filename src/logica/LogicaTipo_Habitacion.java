@@ -48,4 +48,8 @@ public class LogicaTipo_Habitacion {
 		th.setPrecio_Por_Dia(precioPorDia);
 		tipo_habitacionDAO.update(th);
 	}
+	
+	public void eliminarTipoHabitacion(int id) {
+		tipo_habitacionDAO.delete(id);
+	}
 }

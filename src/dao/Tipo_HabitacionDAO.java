@@ -111,7 +111,7 @@ public class Tipo_HabitacionDAO {
 		}
 		
 		//metodo para eliminar un tipo de habitacion teniendo como parametro un id de tipo habitacion
-		public void delete(Tipo_Habitacion th) {
+		public void delete(int id) {
 			PreparedStatement stmt = null;
 			ResultSet rs = null;
 			
@@ -120,7 +120,7 @@ public class Tipo_HabitacionDAO {
 						"delete from tipo_Habitacion where id_Tipo_Habitacion=?"
 						);
 				
-				stmt.setInt(1, th.getId_Tipo_Habitacion());
+				stmt.setInt(1, id);
 				stmt.executeUpdate();
 			
 			} catch (SQLException e) {
