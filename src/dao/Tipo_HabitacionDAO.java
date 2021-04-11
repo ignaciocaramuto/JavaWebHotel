@@ -212,4 +212,41 @@ public class Tipo_HabitacionDAO {
 		
 		return tipo_habitaciones;
 	}
+	
+	public Tipo_Habitacion getOne(int id) {
+		Tipo_Habitacion th=null;
+			PreparedStatement stmt=null;
+			ResultSet rs=null;
+			try {
+				stmt=DbConnector.getInstancia().getConn().prepareStatement(
+						"select * from Tipo_Habitacion where id_Tipo_Habitacion=?"
+						);
+				stmt.setInt(1, id);
+				
+				rs=stmt.executeQuery();
+				if(rs!=null && rs.next()) {
+					th=new Tipo_Habitacion();
+					th.setCapacidad_Personas(rs.getInt("capacidad_Personas"));
+					th.setDenominacion(rs.getString("denominacion"));
+					th.setDescripcion(rs.getString("descripcion"));
+					th.setId_Tipo_Habitacion(rs.getInt("id_Tipo_Habitacion"));
+					th.setPrecio_Por_Dia(rs.getFloat("precio_Por_Dia"));
+				
+				}
+				
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				try {
+					if(rs!=null) {rs.close();}
+					if(stmt!=null) {stmt.close();}
+					DbConnector.getInstancia().releaseConn();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			
+			return th;
+		
+	}
 }

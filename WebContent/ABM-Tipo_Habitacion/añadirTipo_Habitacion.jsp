@@ -21,7 +21,7 @@
 						<input type="text" name="denominacion" class="form-control mt-2" placeholder="Ingrese denominación" required>
 						<input type="text" name="descripcion" class="form-control mt-2" placeholder="Ingrese descripción" required>
 						<input type="number" name="capacidadPersonas" class="form-control mt-2" placeholder="Ingrese capacidad de personas" required>
-						<input type="number" name="precioPorDia" class="form-control mt-2" placeholder="Ingrese precio por día" required>
+						<input type="number" step="0.01" name="precioPorDia" class="form-control mt-2" placeholder="Ingrese precio por día" required>
 						<input type="submit" class="btn btn-primary btn-block mt-2" name="btn-añadirTipo_Habitacion" value="Añadir">
 					</div>
 				</div>

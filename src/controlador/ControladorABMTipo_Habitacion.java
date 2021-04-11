@@ -45,6 +45,11 @@ public class ControladorABMTipo_Habitacion extends HttpServlet {
 			listarTipoHabitaciones(request, response);
 		}
 		
+		if(request.getParameter("btn-actualizarTipo_Habitacion") !=null) {
+			ctrlTipoHabitacion.editarTipoHabitacion(request);
+			listarTipoHabitaciones(request, response);
+		}
+		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
